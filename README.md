@@ -1,4 +1,4 @@
-## jPOS Template
+## jPOS Client Template
 
 Clone this project in order to create your own jPOS based application.
 
