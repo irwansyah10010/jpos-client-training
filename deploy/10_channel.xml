@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<channel-adaptor name='jpos-channel' logger="Q2">
+    <channel class="com.lawencon.client.channel.LawChannel"
+             packager="org.jpos.iso.packager.GenericPackager">
+
+        <property name="host" value="127.0.0.1" />
+        <property name="port" value="8000"/>
+        <property name="packager-config" value="cfg/lawen-packager.xml"/>
+    </channel>
+    <in>jpos-send</in>
+    <out>jpos-receive</out>
+    <reconnect-delay>10000</reconnect-delay>
+</channel-adaptor>
