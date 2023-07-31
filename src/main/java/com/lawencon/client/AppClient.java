@@ -23,20 +23,10 @@ public class AppClient {
 
         // membuat header manual(masih belum mengerti membuat channel)
         DateFormat formatBit7 = new SimpleDateFormat("MMddHHmmss");
-//        String mti = "0800";
         String date = formatBit7.format(new Date());
-//        Map<Integer, String> logRequestMap = new LinkedHashMap<>();
-//
-//        logRequestMap.put(7, date.toString());
-//        logRequestMap.put(11, "834624");
-//        logRequestMap.put(70, "001");
-//
-//        String header = ISOChannel.header(mti, logRequestMap);
-        //
 
         ISOMsg logRequest = new ISOMsg();
 
-//        logRequest.setHeader(header.getBytes());
         logRequest.set(0,"0800");
         logRequest.set(7, date.toString());
         logRequest.set(11, "834624");
@@ -45,7 +35,6 @@ public class AppClient {
         ISOMsg response = sender.request(logRequest, 20 * 1000);
 
         System.out.println(new String(logRequest.pack()));
-//        System.out.println(new String(logRequest.getHeader()));
 
         if(response == null){
             System.out.println("No Response");
